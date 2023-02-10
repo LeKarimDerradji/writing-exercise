@@ -1,4 +1,4 @@
 {
-    "slither.solcPath": "",
-    "slither.hiddenDetectors": []
+    "editor.formatOnSave": true,
+    "solidity.formatter": "forge",
 }

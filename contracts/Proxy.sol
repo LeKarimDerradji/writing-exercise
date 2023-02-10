@@ -15,13 +15,14 @@ contract Proxy {
     address public implementation;
 
     constructor(address _implementation, address _owner) {
+        //@audit lacks a zero checks 
         owner = _owner;
         implementation = _implementation;
     }
 
     fallback() external payable {
         require(msg.sender == owner);
-
+        
         address _implementation = implementation;
         assembly {
             // Copy msg.data. We take full control of memory in this inline assembly
